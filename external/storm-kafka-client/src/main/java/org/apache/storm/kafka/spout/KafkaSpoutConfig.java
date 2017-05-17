@@ -251,6 +251,13 @@ public class KafkaSpoutConfig<K, V> implements Serializable {
         }
         
         /**
+         * Set the client.id for the consumers
+         */
+        public Builder<K,V> setClientId(String id) {
+            return setProp("client.id", id);
+        }
+        
+        /**
          * reset the bootstrap servers for the Consumer
          */
         public Builder<K,V> setBootstrapServers(String servers) {
@@ -505,6 +512,10 @@ public class KafkaSpoutConfig<K, V> implements Serializable {
 
     public String getConsumerGroupId() {
         return (String) kafkaProps.get(ConsumerConfig.GROUP_ID_CONFIG);
+    }
+
+    public String getConsumerClientId() {
+        return (String) kafkaProps.get(ConsumerConfig.CLIENT_ID_CONFIG);
     }
 
     public FirstPollOffsetStrategy getFirstPollOffsetStrategy() {

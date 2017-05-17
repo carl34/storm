@@ -165,6 +165,8 @@ streams based on the topic, storm provides `ByTopicRecordTranslator`.  See below
 
 `setGroupId` lets you set the id of the kafka consumer group property "group.id'
 
+`setClientId` lets you set the id of the kafka consumer client property "client.id'
+
 `setSSLKeystore` and `setSSLTruststore` allow you to configure SSL authentication.
 
 ### Usage Examples
